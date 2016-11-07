@@ -62,14 +62,14 @@ class dialectViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        //TODO this is changed to use the local data to evalute
+        //I will change it to github
         let hoge = getLecture()
         hoge.didEndLoad = {(obj) in
             //print(obj.description,"mainThread")
             self.getDate(content: obj)
             self.animateBackgroundImageView()
         }
-        // print("animateBackGroundImageView is runing")
-        // animateBackgroundImageView()
     }
     
     func getDate(content: [[String:AnyObject]])
@@ -91,17 +91,10 @@ class dialectViewController: UIViewController {
         
         CATransaction.setAnimationDuration(animationDuration)
         CATransaction.setCompletionBlock {
-//            let delay = DispatchTime.now(DispatchTime.now, Int64(self.switchingInterval * TimeInterval(NSEC_PER_SEC)))
-//            dispatch_after(delay, DispatchQueue.main) {
-//                self.animateBackgroundImageView()
-//            }
             let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(self.switchingInterval * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
             DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
                 self.animateBackgroundImageView()
             })
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                self.animateBackgroundImageView()
-//            }
         }
         
         let transition = CATransition()

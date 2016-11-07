@@ -17,10 +17,10 @@
 		36BCCDA91D97B1BD002022BE /* CharacterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BCCDA71D97B1BD002022BE /* CharacterLabel.swift */; };
 		36BCCDAA1D97B1BD002022BE /* FadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BCCDA81D97B1BD002022BE /* FadingLabel.swift */; };
 		36BCCDAC1D97B1C8002022BE /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BCCDAB1D97B1C8002022BE /* Quote.swift */; };
-		36BCCDAF1D97B1E4002022BE /* SwiftExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BCCDAD1D97B1E4002022BE /* SwiftExtenstions.swift */; };
 		36BCCDB11D97B217002022BE /* DaoFromService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BCCDB01D97B217002022BE /* DaoFromService.swift */; };
 		36BCCDB31D97B225002022BE /* CLMLayerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BCCDB21D97B225002022BE /* CLMLayerAnimation.swift */; };
 		36BCCDB51D97B25C002022BE /* dialectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BCCDB41D97B25C002022BE /* dialectViewController.swift */; };
+		36BCCF731D9FB956002022BE /* SwiftExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BCCF721D9FB956002022BE /* SwiftExtenstions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +36,10 @@
 		36BCCDA71D97B1BD002022BE /* CharacterLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterLabel.swift; sourceTree = "<group>"; };
 		36BCCDA81D97B1BD002022BE /* FadingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadingLabel.swift; sourceTree = "<group>"; };
 		36BCCDAB1D97B1C8002022BE /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
-		36BCCDAD1D97B1E4002022BE /* SwiftExtenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtenstions.swift; sourceTree = "<group>"; };
 		36BCCDB01D97B217002022BE /* DaoFromService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaoFromService.swift; sourceTree = "<group>"; };
 		36BCCDB21D97B225002022BE /* CLMLayerAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLMLayerAnimation.swift; sourceTree = "<group>"; };
 		36BCCDB41D97B25C002022BE /* dialectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dialectViewController.swift; sourceTree = "<group>"; };
+		36BCCF721D9FB956002022BE /* SwiftExtenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftExtenstions.swift; path = "../../../Project/iOS/Animation 10 - SecretTextAnimation/SecretTextAnimation/SwiftExtenstions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 		36BCCDAE1D97B1E4002022BE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				36BCCDAD1D97B1E4002022BE /* SwiftExtenstions.swift */,
+				36BCCF721D9FB956002022BE /* SwiftExtenstions.swift */,
 			);
 			name = Extensions;
 			path = "../../../../Desktop/TextPicture-master/SecretTextAnimation";
@@ -210,8 +210,8 @@
 				36BCCDA41D97A5DF002022BE /* Entry.swift in Sources */,
 				36BCCDB11D97B217002022BE /* DaoFromService.swift in Sources */,
 				36BCCDB31D97B225002022BE /* CLMLayerAnimation.swift in Sources */,
-				36BCCDAF1D97B1E4002022BE /* SwiftExtenstions.swift in Sources */,
 				36BCCD901D979EE4002022BE /* ViewController.swift in Sources */,
+				36BCCF731D9FB956002022BE /* SwiftExtenstions.swift in Sources */,
 				36BCCDAA1D97B1BD002022BE /* FadingLabel.swift in Sources */,
 				36BCCD8E1D979EE4002022BE /* AppDelegate.swift in Sources */,
 				36BCCDAC1D97B1C8002022BE /* Quote.swift in Sources */,
@@ -380,6 +380,7 @@
 				36BCCD9E1D979EE4002022BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -21,12 +21,13 @@ class getLecture {
         
 //        let q1: dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 //        dispatch_async(q1,{() -> Void in
-            let url = NSURL(string: "http://www.mymunan.com/patch/test.json")
+            let url = NSURL(string: "https://dinghing.github.io/test.json")
             let request = NSURLRequest(url: url as! URL)
             let config = URLSessionConfiguration.default
             let session = URLSession(configuration: config)
             let task = session.dataTask(with: request as URLRequest, completionHandler: {(data, response, error) in
                 do {
+                    
                     let object = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
                     if let dictionary = object as? [String: AnyObject] {
                         

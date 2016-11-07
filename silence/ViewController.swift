@@ -14,22 +14,22 @@ class ViewController: UITableViewController {
     struct Constaint {
         
         struct Images {
-            static let one = "one"
-            static let two = "two"
-            static let three = "three"
-            static let four = "four"
-            static let five = "five"
-            static let six = "six"
+            static let one = "First"
+            static let two = "Second"
+            static let three = "Third"
+            static let four = "Forth"
+            static let five = "Fifth"
+            static let six = "Sixth"
         }
     }
     
     var entries = [
-        Entry(title:"First Entry",image:UIImage(named:"one")!),
-        Entry(title:"Exploring",image:UIImage(named:"two")!),
-        Entry(title:"Traveling Abroad",image:UIImage(named:"three")!),
-        Entry(title:"Scuba Diving",image:UIImage(named:"four")!),
-        Entry(title:"Trip Together",image:UIImage(named:"five")!),
-        Entry(title:"The Unknown",image:UIImage(named:"six")!)
+        Entry(title:"First Entry",image:UIImage(named:"First")!),
+        Entry(title:"Exploring",image:UIImage(named:"Second")!),
+        Entry(title:"Traveling Abroad",image:UIImage(named:"Third")!),
+        Entry(title:"Scuba Diving",image:UIImage(named:"Forth")!),
+        Entry(title:"Trip Together",image:UIImage(named:"Fifth")!),
+        Entry(title:"The Everything",image:UIImage(named:"Sixth")!)
     ]
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

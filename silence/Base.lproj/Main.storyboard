@@ -66,13 +66,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oqU-Vd-svv">
-                                <frame key="frameInset" minY="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oqU-Vd-svv"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oqU-Vd-svv" firstAttribute="centerY" secondItem="aZw-6w-j9u" secondAttribute="centerY" id="ShX-L2-vxU"/>
+                            <constraint firstItem="oqU-Vd-svv" firstAttribute="centerX" secondItem="aZw-6w-j9u" secondAttribute="centerX" id="bXI-TS-G99"/>
+                            <constraint firstItem="oqU-Vd-svv" firstAttribute="leading" secondItem="aZw-6w-j9u" secondAttribute="leading" id="i6i-i3-96X"/>
+                            <constraint firstItem="oqU-Vd-svv" firstAttribute="bottom" secondItem="qNm-Fc-rm8" secondAttribute="top" id="wC7-lR-Xpx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="oqU-Vd-svv" id="mxR-fO-gvC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lma-yU-CSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

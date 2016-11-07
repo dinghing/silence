@@ -1,6 +1,6 @@
 //
 //  CLMLayerAnimation.swift
-//  SecretText
+//
 //
 //  Created by dinghing on 8/15/16.
 //  Copyright © 2016 dinghing.sample.com. All rights reserved.
@@ -42,7 +42,7 @@ class CLMLayerAnimation: NSObject {
                 differenceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
                 differenceAnimation.duration = duration
                 differenceAnimation.beginTime = CACurrentMediaTime()
-                differenceAnimation.delegate = animation
+                differenceAnimation.delegate = animation as? CAAnimationGroup as! CAAnimationDelegate?
                 layer.add(differenceAnimation, forKey: nil)
             }else{
                 if let completion = animation.completionClosure {
