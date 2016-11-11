@@ -8,9 +8,16 @@
 
 import UIKit
 
+//closure
+//typealias SendValueClosure = (_ indexValue:Int)->Void
+
+
 class ViewController: UITableViewController {
     
     //Types
+    //var closure : SendValueClosure?
+    
+    //var rowNumber = 0
     struct Constaint {
         
         struct Images {
@@ -45,6 +52,22 @@ class ViewController: UITableViewController {
         
         return cell
     }
+    
+     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.tableView!.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "sendValue", sender: indexPath.row)
+        
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "sendValue"{
+            let controller = segue.destination as! dialectViewController
+            controller.indexOfURL = Int(sender as! NSNumber)
+        }
+    }
+
     
     func configureNavigationController() {
         navigationController?.hidesBarsOnSwipe = true

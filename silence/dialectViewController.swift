@@ -28,6 +28,15 @@ class dialectViewController: UIViewController {
         }
     }
     
+    struct ConstantsURL {
+        struct URL {
+            static let url1 = "https://dinghing.github.io/test.json"
+            static let url2 = ""
+            static let url3 = ""
+            static let url4 = ""
+        }
+    }
+    
     // MARK: - Properties
     
     @IBOutlet var backgroundImageView: UIImageView!
@@ -36,6 +45,10 @@ class dialectViewController: UIViewController {
     let animationDuration: TimeInterval = 1.0
     let switchingInterval: TimeInterval = 3.0
     var currentIndex = 0
+    var url = ConstantsURL.URL.url1
+    var indexOfURL = 0
+    
+    
     
     var quotes = [
         Quote(quote: "\"The unexamined life is not worth living.\"", author: "Socrates", image: UIImage(named: Constants.Images.one)!),
@@ -50,6 +63,10 @@ class dialectViewController: UIViewController {
         Quote(quote: "\"It is not death that a man should fear, but he should fear never beginning to live.\"", author: "Marcus Aurelius", image: UIImage(named: Constants.Images.ten)!),
         ]
     
+
+    
+    // MARK: take back of the item
+
     // MARK: - View Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,15 +78,22 @@ class dialectViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         //TODO this is changed to use the local data to evalute
         //I will change it to github
-        let hoge = getLecture()
+        switch indexOfURL{
+        case 1:url = ConstantsURL.URL.url1
+        case 2:url = ConstantsURL.URL.url2
+        case 3:url = ConstantsURL.URL.url3
+        case 4:url = ConstantsURL.URL.url4
+        default:break
+        }
+        
+        let hoge = getLecture(url: url)
         hoge.didEndLoad = {(obj) in
-            //print(obj.description,"mainThread")
             self.getDate(content: obj)
             self.animateBackgroundImageView()
         }
+        //print("this is the index of URL",indexOfURL)
     }
     
     func getDate(content: [[String:AnyObject]])

@@ -12,6 +12,5 @@ import UIKit
 class EntryCell:UITableViewCell{
     
     @IBOutlet var entryImage: UIImageView!
-    
     @IBOutlet var entryTitle: UILabel!
 }

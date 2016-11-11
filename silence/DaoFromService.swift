@@ -14,14 +14,16 @@ class getLecture {
     var didEndLoad: (([[String: AnyObject]]) -> Void)?
     
     var dateFromJson: [[String: AnyObject]] = []
-    init(){
+    var url: String
+    init(url: String){
+        self.url = url
         initWithDate()
+        
     }
     func initWithDate(){
-        
-//        let q1: dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-//        dispatch_async(q1,{() -> Void in
-            let url = NSURL(string: "https://dinghing.github.io/test.json")
+        DispatchQueue.global().async {
+            //let url = NSURL(string: "https://dinghing.github.io/test.json")
+            let url = NSURL(string:self.url)
             let request = NSURLRequest(url: url as! URL)
             let config = URLSessionConfiguration.default
             let session = URLSession(configuration: config)
@@ -31,17 +33,17 @@ class getLecture {
                     let object = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
                     if let dictionary = object as? [String: AnyObject] {
                         
-             //           DispatchQueue.main.asynchronously() {
+                        DispatchQueue.main.async() {
                             self.dateFromJson = self.readJSONObject(object: dictionary)!
                             self.didEndLoad?(self.dateFromJson)
-             //           }
-                                           }
+                        }
+                    }
                 } catch let error as NSError{
                     print(error.localizedDescription)
                 }
-  //          });
         })
         task.resume()
+        }
         
     }
     
