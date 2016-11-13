@@ -5,11 +5,13 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "2B17CD2894875888A73CB5894AB4398BEE8BF187" : 9223372036854775807,
+    "55D6685C0095C68AC52E468EDA00DC33F9626D57" : 9223372036854775807,
     "740A1701FABB2BA28D727E8D64922999E0ECCACA" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7A55B079-6F1A-4189-8DEF-CB111D71A51A",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "2B17CD2894875888A73CB5894AB4398BEE8BF187" : "Animation%2010%20-%20SecretTextAnimation\/",
+    "2B17CD2894875888A73CB5894AB4398BEE8BF187" : "TextPicture\/",
+    "55D6685C0095C68AC52E468EDA00DC33F9626D57" : "",
     "740A1701FABB2BA28D727E8D64922999E0ECCACA" : "silence\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "silence",
@@ -20,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:dinghing\/TextPicture.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B17CD2894875888A73CB5894AB4398BEE8BF187"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:QIDing\/step.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "55D6685C0095C68AC52E468EDA00DC33F9626D57"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dinghing\/silence.git",

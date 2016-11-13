@@ -16,6 +16,7 @@ class Quote {
     var author: String
     var image: UIImage
     
+    
     // MARK: - Initializers
     
     init(quote: String, author: String, image: UIImage) {

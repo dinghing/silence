@@ -30,10 +30,10 @@ class dialectViewController: UIViewController {
     
     struct ConstantsURL {
         struct URL {
-            static let url1 = "https://dinghing.github.io/test.json"
-            static let url2 = ""
-            static let url3 = ""
-            static let url4 = ""
+            static let url0 = "https://dinghing.github.io/silence/url0.json"
+            static let url1 = "https://dinghing.github.io/silence/url1.json"
+            static let url2 = "https://dinghing.github.io/silence/url2.json"
+            static let url3 = "https://dinghing.github.io/silence/url3.json"
         }
     }
     
@@ -43,10 +43,11 @@ class dialectViewController: UIViewController {
     
     var quoteLabel: FadingLabel!
     let animationDuration: TimeInterval = 1.0
-    let switchingInterval: TimeInterval = 3.0
+    let switchingInterval: TimeInterval = 20.0
     var currentIndex = 0
-    var url = ConstantsURL.URL.url1
+    var url = ConstantsURL.URL.url0
     var indexOfURL = 0
+    var sum = 0
     
     
     
@@ -62,7 +63,6 @@ class dialectViewController: UIViewController {
         Quote(quote: "\"Somewhere, something incredible is waiting to be known.\"", author: "Carl Sagan", image: UIImage(named: Constants.Images.nine)!),
         Quote(quote: "\"It is not death that a man should fear, but he should fear never beginning to live.\"", author: "Marcus Aurelius", image: UIImage(named: Constants.Images.ten)!),
         ]
-    
 
     
     // MARK: take back of the item
@@ -74,6 +74,7 @@ class dialectViewController: UIViewController {
         
         setupCharacterLabel()
         setupBackgroundImageView()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,33 +82,40 @@ class dialectViewController: UIViewController {
         //TODO this is changed to use the local data to evalute
         //I will change it to github
         switch indexOfURL{
+        case 0:url = ConstantsURL.URL.url0
         case 1:url = ConstantsURL.URL.url1
         case 2:url = ConstantsURL.URL.url2
         case 3:url = ConstantsURL.URL.url3
-        case 4:url = ConstantsURL.URL.url4
         default:break
         }
         
         let hoge = getLecture(url: url)
+        
         hoge.didEndLoad = {(obj) in
             self.getDate(content: obj)
             self.animateBackgroundImageView()
         }
-        //print("this is the index of URL",indexOfURL)
+        
+       // print("this is the index of URL",indexOfURL)
     }
     
     func getDate(content: [[String:AnyObject]])
     {
-        for index in 0..<10 {
+        sum = content.count
+        for index in 0..<sum {
             quotes[index].quote = (content[index]["lecture"] as? String)!
             quotes[index].author = (content[index]["author"] as? String)!
         }
-        
     }
     // MARK: - Convenience
     
     func animateBackgroundImageView() {
         
+        if sum == 1{
+            switchQuote()
+            backgroundImageView.image = quotes[currentIndex].image
+        }
+        else{
         // Quote is switched here so it is in sync with the image switching.
         switchQuote()
         
@@ -131,18 +139,22 @@ class dialectViewController: UIViewController {
         CATransaction.commit()
         
         // Increase index to switch both the quote and image to the next.
-        currentIndex = currentIndex < quotes.count - 1 ? currentIndex + 1 : 0
+        //currentIndex = currentIndex < quotes.count - 1 ? currentIndex + 1 : 0
+        currentIndex = currentIndex < sum - 1 ? currentIndex + 1 : 0
+    }
     }
     
     func switchQuote() {
         quoteLabel.text = "" // Clear label before switching to a new quote.
         quoteLabel.text = quotes[currentIndex].quote + "\n\n" + quotes[currentIndex].author
+     //   print(quotes[currentIndex].quote)
         
     }
     
     func setupBackgroundImageView() {
         // Initial image.
         backgroundImageView.image = quotes[currentIndex].image
+       // backgroundImageView.image = UIImage(named: Constants.Images.one)
     }
     
     func setupCharacterLabel() {
@@ -164,7 +176,15 @@ class dialectViewController: UIViewController {
             quoteLabel.widthAnchor.constraint(equalToConstant: self.view.frame.width / 1.25)
             ])
     }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if sum != 1{
+            self.animateBackgroundImageView()
+        }
+    }
     
+
+
     // MARK: - Status Bar
     
 //    override func prefersStatusBarHidden() -> Bool {

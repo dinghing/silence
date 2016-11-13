@@ -15,7 +15,6 @@ import UIKit
 class ViewController: UITableViewController {
     
     //Types
-    //var closure : SendValueClosure?
     
     //var rowNumber = 0
     struct Constaint {
@@ -25,18 +24,18 @@ class ViewController: UITableViewController {
             static let two = "Second"
             static let three = "Third"
             static let four = "Forth"
-            static let five = "Fifth"
-            static let six = "Sixth"
+//            static let five = "Fifth"
+//            static let six = "Sixth"
         }
     }
     
     var entries = [
-        Entry(title:"First Entry",image:UIImage(named:"First")!),
-        Entry(title:"Exploring",image:UIImage(named:"Second")!),
-        Entry(title:"Traveling Abroad",image:UIImage(named:"Third")!),
-        Entry(title:"Scuba Diving",image:UIImage(named:"Forth")!),
-        Entry(title:"Trip Together",image:UIImage(named:"Fifth")!),
-        Entry(title:"The Everything",image:UIImage(named:"Sixth")!)
+        Entry(title:"Beautiful Mind",image:UIImage(named:"First")!),
+        Entry(title:"Digital News",image:UIImage(named:"Second")!),
+        Entry(title:"Social Papers",image:UIImage(named:"Third")!),
+        Entry(title:"About me",image:UIImage(named:"Forth")!),
+//        Entry(title:"Trip Together",image:UIImage(named:"Fifth")!),
+//        Entry(title:"The Everything",image:UIImage(named:"Sixth")!)
     ]
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
