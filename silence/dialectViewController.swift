@@ -48,6 +48,7 @@ class dialectViewController: UIViewController {
     var url = ConstantsURL.URL.url0
     var indexOfURL = 0
     var sum = 0
+    var randNum = 0
     
     
     
@@ -71,6 +72,7 @@ class dialectViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        randNum = Int(arc4random_uniform(10))
         
         setupCharacterLabel()
         setupBackgroundImageView()
@@ -113,7 +115,7 @@ class dialectViewController: UIViewController {
         
         if sum == 1{
             switchQuote()
-            backgroundImageView.image = quotes[currentIndex].image
+            backgroundImageView.image = quotes[randNum].image
         }
         else{
         // Quote is switched here so it is in sync with the image switching.
@@ -134,13 +136,17 @@ class dialectViewController: UIViewController {
         
         
         backgroundImageView.layer.add(transition, forKey: kCATransition)
-        backgroundImageView.image = quotes[currentIndex].image
+        backgroundImageView.image = quotes[currentIndex+randNum].image
         
         CATransaction.commit()
         
         // Increase index to switch both the quote and image to the next.
         //currentIndex = currentIndex < quotes.count - 1 ? currentIndex + 1 : 0
         currentIndex = currentIndex < sum - 1 ? currentIndex + 1 : 0
+            if (currentIndex + randNum) > 9 {
+                currentIndex = 0
+                randNum = 0
+            }
     }
     }
     
@@ -153,7 +159,7 @@ class dialectViewController: UIViewController {
     
     func setupBackgroundImageView() {
         // Initial image.
-        backgroundImageView.image = quotes[currentIndex].image
+        backgroundImageView.image = quotes[randNum].image
        // backgroundImageView.image = UIImage(named: Constants.Images.one)
     }
     
